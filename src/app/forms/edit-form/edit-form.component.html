@@ -1,0 +1,44 @@
+<html>
+<div class="row">
+    <div class="col-xl-2">User Name</div>
+    <div class="col-xl-2">
+        <input class="form-control" type="text" name="USER_NAME" id="USER_NAME" [(ngModel)]="data.formData['USER_NAME']">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-2">User ID</div>
+    <div class="col-xl-2">
+        <input class="form-control" type="text" name="USER_ID" id="USER_ID" [(ngModel)]="data.formData['USER_ID']">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-2">Full Name</div>
+    <div class="col-xl-2">
+        <input class="form-control" type="text" name="FULL_NAME" id="FULL_NAME" [(ngModel)]="data.formData['FULL_NAME']">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-2">Region</div>
+    <div class="col-xl-2">
+        <select  class="form-control" name="REGION_ID" id="REGION_ID" [(ngModel)]="data.formData['REGION_ID']">
+              <option *ngFor="let m of data.regions" value="{{ m.REGION_ID }}">
+                {{ m.REGION_NAME }}
+              </option>
+        </select>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-2"></div>
+    <div class="col-xl-2">
+        <button (click)="postForm()" class="btn btn-primary">Save Form</button>
+    </div>
+</div>
+
+<div class="row">
+<div class="col-xl-12">
+    {{ data.formData['USER_NAME'] }}
+</div>    
+</div>
+</html>
